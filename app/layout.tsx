@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { Inter, Geist } from "next/font/google";
 import "./globals.css";
-import { cn } from "@/lib/utils";
 import { APP_NAME, APP_DESCRIPTION, SERVER_URL } from "@/lib/constants";
+import { ThemeProvider } from "next-themes";
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -25,16 +24,18 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={cn(
-        "h-full",
-        "antialiased",
-        "light",
-        inter.className,
-        "font-sans",
-        geist.variable,
-      )}
+      suppressHydrationWarning // mismatch between server code and client code because next-themes use window object which is not available on server side
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className={`${inter.className}`}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
