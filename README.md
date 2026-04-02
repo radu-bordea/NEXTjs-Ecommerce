@@ -4,3 +4,7 @@
 # shadcn
 - npx shadcn@latest init
 - npx shadcn@latest add button
+
+
+# libraries
+- npm i lucide-react
