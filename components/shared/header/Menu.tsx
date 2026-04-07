@@ -30,22 +30,22 @@ const Menu = () => {
         <Sheet>
           <SheetTrigger className="align-middle">
             <EllipsisVertical />
-            <SheetContent className="flex flex-col items-start p-4">
-              <SheetTitle>Menu</SheetTitle>
-              <ModeToggle />
-              <Button asChild variant="ghost">
-                <Link href="/cart">
-                  <ShoppingCart /> Cart
-                </Link>
-              </Button>
-              <Button asChild>
-                <Link href="/sign-in">
-                  <UserIcon /> Sign In
-                </Link>
-              </Button>
-              <SheetDescription></SheetDescription>
-            </SheetContent>
           </SheetTrigger>
+          <SheetContent className="flex flex-col items-start p-4">
+            <SheetTitle>Menu</SheetTitle>
+            <ModeToggle />
+            <Button asChild variant="ghost">
+              <Link href="/cart">
+                <ShoppingCart /> Cart
+              </Link>
+            </Button>
+            <Button asChild>
+              <Link href="/sign-in">
+                <UserIcon /> Sign In
+              </Link>
+            </Button>
+            <SheetDescription></SheetDescription>
+          </SheetContent>
         </Sheet>
       </nav>
     </div>
