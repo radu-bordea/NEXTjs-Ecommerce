@@ -6,6 +6,7 @@
 - npx shadcn@latest add button
 - npx shadcn@latest dropdown-menu
 - npx shadcn@latest sheet
+- npx shadcn@latest card
 
 
 # libraries
