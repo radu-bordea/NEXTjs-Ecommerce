@@ -24,3 +24,6 @@
 - "postinstall": "prisma generate"
 - npx prisma migrate dev --name init
 - npx prisma generate
+// add this line in migrations in the prisma.config file
+- seed: `tsx prisma/seed.ts`,
+- npx prisma db seed
