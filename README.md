@@ -13,6 +13,8 @@
 - npm i lucide-react
 - npm i next-themes
 - npm i zod
+- npm i @neondatabase/serverless @prisma/adapter-neon ws
+- npm i -d @types/ws bufferutil
 
 # prisma instalations
 - npm install prisma tsx @types/pg --save-dev
