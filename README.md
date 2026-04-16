@@ -7,6 +7,7 @@
 - npx shadcn@latest dropdown-menu
 - npx shadcn@latest sheet
 - npx shadcn@latest card
+- npx shadcn@latest add badge
 
 
 # libraries
