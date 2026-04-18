@@ -1,12 +1,12 @@
 import { z } from "zod";
-import { formatNumberWithDecimalPlaces } from "./utils";
+import { formatNumberWithDecimal } from "./utils";
 
+// Make sure price is formatted with two decimal places
 const currency = z
   .string()
   .refine(
-    (value) =>
-      /^\d+(\.\d{2})?$/.test(formatNumberWithDecimalPlaces(Number(value))),
-    "Price must be a valid number with up to 2 decimal places",
+    (value) => /^\d+(\.\d{2})?$/.test(formatNumberWithDecimal(Number(value))),
+    'Price must have exactly two decimal places (e.g., 49.99)'
   );
 
 // Schema for inserting products into the database
