@@ -16,6 +16,7 @@
 - npm i zod
 - npm i @neondatabase/serverless @prisma/adapter-neon ws
 - npm i -d @types/ws bufferutil
+- npm i bcrypt-ts-edge
 
 # prisma instalations
 - npm install prisma tsx @types/pg --save-dev
@@ -31,3 +32,4 @@
 // add this line in migrations in the prisma.config file
 - seed: `tsx prisma/seed.ts`,
 - npx prisma db seed
+- npx prisma migrate dev --name add_user_based_tables

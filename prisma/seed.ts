@@ -12,10 +12,18 @@ const prisma = new PrismaClient({
 });
 
 const productData: Prisma.ProductCreateInput[] = sampleData.products
+const userData: Prisma.UserCreateInput[] = sampleData.users
 
 export async function main() {
+  await prisma.user.deleteMany();
+  await prisma.product.deleteMany();
+
   for (const p of productData) {
     await prisma.product.create({ data: p });
+  }
+
+  for (const u of userData) {
+    await prisma.user.create({ data: u });
   }
 
   console.log("Database seeded successfully!");
