@@ -68,6 +68,7 @@ export const config = {
       return session;
     },
   },
+  // the config object is compatible withg NextAuthConfig type, but we need to assert it as such to satisfy the type checker
 } satisfies NextAuthConfig;
 
 export const { handlers, auth, signIn, signOut } = NextAuth(config);
