@@ -17,6 +17,10 @@
 - npm i @neondatabase/serverless @prisma/adapter-neon ws
 - npm i -d @types/ws bufferutil
 - npm i bcrypt-ts-edge
+- npm i next-auth@beta
+- npm i @auth/prisma-adapter
+
+- openssl rand -base64 32
 
 # prisma instalations
 - npm install prisma tsx @types/pg --save-dev
