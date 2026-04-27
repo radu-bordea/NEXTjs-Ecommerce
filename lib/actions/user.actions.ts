@@ -42,7 +42,7 @@ export async function signOutUser() {
 }
 
 // Sign up user
-export async function SignUpUser(prev: unknown, formData: FormData) {
+export async function signUpUser(prev: unknown, formData: FormData) {
   try {
     const user = signUpFormSchema.parse({
       name: formData.get("name"),
