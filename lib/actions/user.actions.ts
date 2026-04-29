@@ -6,6 +6,7 @@ import { isRedirectError } from "next/dist/client/components/redirect-error";
 import { hashSync } from "bcrypt-ts";
 import { prisma } from "@/db/prisma";
 import { success } from "zod";
+import { formatError } from "../utils";
 
 // Sign in the users with credentials
 export async function signInWithCredentials(
@@ -70,9 +71,10 @@ export async function signUpUser(prev: unknown, formData: FormData) {
 
     return { success: true, message: "User registered successfully" };
   } catch (error) {
+    
     if (isRedirectError(error)) {
       throw error;
     }
-    return { success: false, message: "User was not registered" };
+    return { success: false, message: formatError(error)};
   }
 }
