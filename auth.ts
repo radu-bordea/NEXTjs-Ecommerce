@@ -59,6 +59,11 @@ export const config = {
     async session({ session, user, trigger, token }: any) {
       // Set the user ID from the token to the session object
       session.user.id = token.sub;
+      session.user.role = token.role;
+      session.user.name = token.name;
+
+      console.log(token);
+      
 
       // If there is an update, set the user name from the user object to the session object
       if (trigger === "update") {
@@ -66,6 +71,24 @@ export const config = {
       }
 
       return session;
+    },
+    async jwt({ token, user, trigger, session }: any) {
+      // Asign user fields to the token
+      if (user) {
+        token.role = user.role;
+
+        // If user has no name then use the email
+        if (user.name === "NO_NAME") {
+          token.name = user.email!.split("@")[0];
+
+          // Update database to reflect the token name
+          await prisma.user.update({
+            where: { id: user.id },
+            data: { name: token },
+          });
+        }
+      }
+      return token;
     },
   },
   // the config object is compatible withg NextAuthConfig type, but we need to assert it as such to satisfy the type checker
