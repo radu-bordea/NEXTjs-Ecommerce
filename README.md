@@ -37,3 +37,4 @@
 - seed: `tsx prisma/seed.ts`,
 - npx prisma db seed
 - npx prisma migrate dev --name add_user_based_tables
+- npx prisma migrate dev --name add_cart
