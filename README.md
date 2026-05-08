@@ -8,6 +8,7 @@
 - npx shadcn@latest sheet
 - npx shadcn@latest card
 - npx shadcn@latest add badge
+- npx shadcn@latest add sonner
 
 
 # libraries
